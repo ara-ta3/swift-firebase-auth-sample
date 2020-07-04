@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  swift-firebase-auth-sample
-//
-//  Created by 田中改 on 2020/07/04.
-//  Copyright © 2020 aratanaka. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
