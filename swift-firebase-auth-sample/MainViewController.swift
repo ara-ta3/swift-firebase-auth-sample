@@ -3,6 +3,25 @@ import FirebaseAuth
 
 class MainViewController: UIViewController {
   var handle: Optional<AuthStateDidChangeListenerHandle> = nil
+  let userDefaults = UserDefaults.standard
+
+  let stateLabel: UILabel = {
+    let label = UILabel()
+    label.translatesAutoresizingMaskIntoConstraints = false
+    label.lineBreakMode = .byCharWrapping
+    label.numberOfLines = 0
+    label.textColor = .black
+    label.widthAnchor.constraint(equalToConstant: 300).isActive = true
+    return label
+  }()
+
+  let firebaseUidLabel: UILabel = {
+    let label = UILabel()
+    label.translatesAutoresizingMaskIntoConstraints = false
+    label.textColor = .black
+    return label
+  }()
+
   let registerLabel: UILabel = {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
@@ -76,7 +95,8 @@ class MainViewController: UIViewController {
     Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
       if let r: AuthDataResult = authResult {
         let user: User = r.user
-        UserDefaults.standard.set("firebase_uid", forKey: user.uid)
+        self.userDefaults.set(user.uid, forKey: "firebase_uid")
+        self.firebaseUidLabel.text = user.uid
       }
       if let e = error {
         print(e)
@@ -94,7 +114,9 @@ class MainViewController: UIViewController {
     Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
       if let r: AuthDataResult = authResult {
         let user: User = r.user
-        UserDefaults.standard.set("firebase_uid", forKey: user.uid)
+        self.stateLabel.text = "login success"
+        self.userDefaults.set(user.uid, forKey: "firebase_uid")
+        self.firebaseUidLabel.text = user.uid
       }
       if let e = error {
         print(e)
@@ -106,6 +128,8 @@ class MainViewController: UIViewController {
     super.viewDidLoad()
     self.view.backgroundColor = .white
 
+    self.view.addSubview(self.stateLabel)
+    self.view.addSubview(self.firebaseUidLabel)
     self.view.addSubview(self.registerLabel)
     self.view.addSubview(self.registerEmail)
     self.view.addSubview(self.registerPassword)
@@ -115,10 +139,14 @@ class MainViewController: UIViewController {
     self.view.addSubview(self.loginPassword)
     self.view.addSubview(self.loginButton)
 
-    self.registerLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 100).isActive = true
-    self.registerEmail.topAnchor.constraint(equalTo: self.registerLabel.bottomAnchor, constant: 20).isActive = true
-    self.registerPassword.topAnchor.constraint(equalTo: self.registerEmail.bottomAnchor, constant: 20).isActive = true
-    self.registerButton.topAnchor.constraint(equalTo: self.registerPassword.bottomAnchor, constant: 20).isActive = true
+    self.stateLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 24).isActive = true
+    self.stateLabel.leftAnchor.constraint(equalTo: self.view.leftAnchor,constant: 16).isActive = true
+    self.firebaseUidLabel.topAnchor.constraint(equalTo: self.stateLabel.bottomAnchor, constant: 8).isActive = true
+
+    self.registerLabel.topAnchor.constraint(equalTo: self.firebaseUidLabel.bottomAnchor, constant: 24).isActive = true
+    self.registerEmail.topAnchor.constraint(equalTo: self.registerLabel.bottomAnchor, constant: 16).isActive = true
+    self.registerPassword.topAnchor.constraint(equalTo: self.registerEmail.bottomAnchor, constant: 16).isActive = true
+    self.registerButton.topAnchor.constraint(equalTo: self.registerPassword.bottomAnchor, constant: 24).isActive = true
 
     self.registerLabel.leftAnchor.constraint(equalTo: self.view.leftAnchor,constant: 22).isActive = true
     self.registerEmail.leftAnchor.constraint(equalTo: self.view.leftAnchor,constant: 30).isActive = true
@@ -136,11 +164,12 @@ class MainViewController: UIViewController {
     self.loginButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
 
     if let user = Auth.auth().currentUser  {
-      if let uid = UserDefaults.standard.string(forKey: "firebase_uid") {
-        debugPrint("already login. uid = \(uid)")
-        debugPrint(user)
+      debugPrint(user)
+      if let uid = self.userDefaults.string(forKey: "firebase_uid") {
+        self.stateLabel.text = "already login."
+        self.firebaseUidLabel.text = uid
       } else {
-        debugPrint("initialized")
+        self.stateLabel.text = "firebase auth is found, but user defaults not found"
         do {
           try Auth.auth().signOut()
         } catch let signOutError as NSError {
@@ -148,7 +177,7 @@ class MainViewController: UIViewController {
         }
       }
     } else {
-      debugPrint("not login")
+      self.stateLabel.text = "not login."
     }
   }
 
