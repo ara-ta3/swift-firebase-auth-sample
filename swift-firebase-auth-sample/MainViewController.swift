@@ -89,8 +89,8 @@ class MainViewController: UIViewController {
   }
 
   @objc func doLogin() {
-    let email = self.registerEmail.text ?? ""
-    let password = self.registerPassword.text ?? ""
+    let email = self.loginEmail.text ?? ""
+    let password = self.loginPassword.text ?? ""
     Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
       if let r: AuthDataResult = authResult {
         let user: User = r.user
