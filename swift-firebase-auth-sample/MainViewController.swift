@@ -1,7 +1,6 @@
 import UIKit
 import FirebaseAuth
 
-
 class MainViewController: UIViewController {
   var handle: Optional<AuthStateDidChangeListenerHandle> = nil
   let registerLabel: UILabel = {
@@ -75,8 +74,9 @@ class MainViewController: UIViewController {
     let email = self.registerEmail.text ?? ""
     let password = self.registerPassword.text ?? ""
     Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-      if let r = authResult {
-        print(r)
+      if let r: AuthDataResult = authResult {
+        let user: User = r.user
+        UserDefaults.standard.set("firebase_uid", forKey: user.uid)
       }
       if let e = error {
         print(e)
@@ -84,12 +84,17 @@ class MainViewController: UIViewController {
     }
   }
 
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    self.view.endEditing(true)
+  }
+
   @objc func doLogin() {
     let email = self.registerEmail.text ?? ""
     let password = self.registerPassword.text ?? ""
     Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-      if let r = authResult {
-        print(r)
+      if let r: AuthDataResult = authResult {
+        let user: User = r.user
+        UserDefaults.standard.set("firebase_uid", forKey: user.uid)
       }
       if let e = error {
         print(e)
@@ -129,6 +134,22 @@ class MainViewController: UIViewController {
     self.loginEmail.leftAnchor.constraint(equalTo: self.view.leftAnchor,constant: 30).isActive = true
     self.loginPassword.leftAnchor.constraint(equalTo: self.view.leftAnchor,constant: 30).isActive = true
     self.loginButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+
+    if let user = Auth.auth().currentUser  {
+      if let uid = UserDefaults.standard.string(forKey: "firebase_uid") {
+        debugPrint("already login. uid = \(uid)")
+        debugPrint(user)
+      } else {
+        debugPrint("initialized")
+        do {
+          try Auth.auth().signOut()
+        } catch let signOutError as NSError {
+          debugPrint("Error signing out: %@", signOutError) 
+        }
+      }
+    } else {
+      debugPrint("not login")
+    }
   }
 
   override func viewDidAppear(_ animated: Bool) {
