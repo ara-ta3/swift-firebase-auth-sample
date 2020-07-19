@@ -23,6 +23,8 @@ class MyTextField: UITextField {
     self.layer.borderColor = UIColor.gray.cgColor
     self.layer.borderWidth = 1
     self.layer.cornerRadius = 8
+    self.autocorrectionType = .no
+    self.autocapitalizationType = .none
     self.widthAnchor.constraint(equalToConstant: self.screenSize.width - 32).isActive = true
     self.heightAnchor.constraint(equalToConstant: 48).isActive = true
   }

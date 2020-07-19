@@ -48,10 +48,8 @@ class MainViewController: UIViewController {
   }()
 
   let registerButton: UIButton = {
-    let button = UIButton()
+    let button = MyButton()
     button.setTitle("新規登録", for: .normal)
-    button.setTitleColor(.black, for: .normal)
-    button.translatesAutoresizingMaskIntoConstraints = false
     button.addTarget(self, action: #selector(doRegister), for: .touchUpInside)
     return button
   }()
