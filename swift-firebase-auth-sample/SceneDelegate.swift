@@ -5,14 +5,34 @@ import FirebaseAuth
 var globalFirebaseUser: User? = nil
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+    let userDefaults = UserDefaults.standard
 
     var window: UIWindow?
 
+    func signOutIfFirstBoot() throws -> User?  {
+        if let user = Auth.auth().currentUser  {
+            if let _ = self.userDefaults.string(forKey: "firebase_uid") {
+              return user
+            } else {
+                try Auth.auth().signOut()
+            }
+        }
+      return  nil
+    }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        do {
+            globalFirebaseUser = try self.signOutIfFirstBoot()
+        } catch let signOutError as NSError {
+            debugPrint("Error signing out: %@", signOutError)
+        }
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UINavigationController(rootViewController: MainViewController())
+            if let _ = globalFirebaseUser {
+
+            } else {
+                window.rootViewController = UINavigationController(rootViewController: RegisterViewController())
+            }
             self.window = window
             window.makeKeyAndVisible()
         }

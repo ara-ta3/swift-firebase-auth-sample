@@ -1,7 +1,7 @@
 import UIKit
 import FirebaseAuth
 
-class MainViewController: UIViewController {
+class RegisterViewController: UIViewController {
   let userDefaults = UserDefaults.standard
 
   func state(_ s: String) {
@@ -79,11 +79,7 @@ class MainViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    do {
-      try self.signOutIfFirstBoot()
-    } catch let signOutError as NSError {
-      debugPrint("Error signing out: %@", signOutError)
-    }
+
     self.view.backgroundColor = .white
     self.title = "登録"
     self.view.addSubview(self.serviceLabel)
@@ -96,19 +92,6 @@ class MainViewController: UIViewController {
     self.layoutViews(topAnchor: self.view.safeAreaLayoutGuide.topAnchor)
   }
 
-  func signOutIfFirstBoot() throws {
-    if let user = Auth.auth().currentUser  {
-      if let _ = self.userDefaults.string(forKey: "firebase_uid") {
-        globalFirebaseUser = user
-        self.state("ログイン済み")
-      } else {
-        try Auth.auth().signOut()
-        self.state("UserDefaultsにはいないためアプリ削除後、FirebaseのKeyChainにUser情報が残っている状態")
-      }
-    } else {
-      self.state("未ログイン")
-    }
-  }
 
   func layoutViews(topAnchor: NSLayoutYAxisAnchor) {
     self.serviceLabel.topAnchor.constraint(equalTo: topAnchor, constant: 24).isActive = true
