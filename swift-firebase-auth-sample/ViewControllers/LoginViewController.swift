@@ -4,10 +4,6 @@ import FirebaseAuth
 class LoginViewController: UIViewController {
   let userDefaults = UserDefaults.standard
 
-  func state(_ s: String) {
-    debugPrint(s)
-  }
-
   let serviceLabel: UILabel = {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
@@ -57,8 +53,8 @@ class LoginViewController: UIViewController {
         debugPrint(e)
       } else if let r: AuthDataResult = authResult {
         let user: User = r.user
-        self.state("ログイン成功")
         self.userDefaults.set(user.uid, forKey: "firebase_uid")
+        Util.replaceRootViewController(viewController: UINavigationController(rootViewController: SignedInViewController(user)))
       }
     }
   }

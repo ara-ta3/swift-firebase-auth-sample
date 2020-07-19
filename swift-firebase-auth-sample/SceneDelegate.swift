@@ -28,8 +28,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            if let _ = globalFirebaseUser {
-
+            if let user = globalFirebaseUser {
+                window.rootViewController = UINavigationController(rootViewController: SignedInViewController(user))
             } else {
                 window.rootViewController = UINavigationController(rootViewController: RegisterViewController())
             }

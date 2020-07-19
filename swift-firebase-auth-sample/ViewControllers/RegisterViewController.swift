@@ -64,6 +64,7 @@ class RegisterViewController: UIViewController {
         let user: User = r.user
         self.userDefaults.set(user.uid, forKey: "firebase_uid")
         globalFirebaseUser = user
+        Util.replaceRootViewController(viewController: UINavigationController(rootViewController: SignedInViewController(user)))
       }
     }
   }

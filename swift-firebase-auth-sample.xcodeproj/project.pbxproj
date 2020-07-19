@@ -14,6 +14,7 @@
 		58C34831758E59B414855641 /* MyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C3458306B41C2CCD1B5727 /* MyButton.swift */; };
 		58C348704508CA5E9FD83036 /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C342E65F62EE06C208F9E0 /* MyTextField.swift */; };
 		58C34AE3BDA012E16B937044 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C3436943963E0B1727055A /* Util.swift */; };
+		58C34B88C2BF90A82C00F65A /* SignedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C3472CC3A1E681CAD1E42D /* SignedInViewController.swift */; };
 		AB2D812B24B019F900753B8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2D812A24B019F900753B8F /* AppDelegate.swift */; };
 		AB2D812D24B019F900753B8F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2D812C24B019F900753B8F /* SceneDelegate.swift */; };
 		AB2D813124B019FB00753B8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB2D813024B019FB00753B8F /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 		58C342E65F62EE06C208F9E0 /* MyTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
 		58C3436943963E0B1727055A /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		58C3458306B41C2CCD1B5727 /* MyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyButton.swift; sourceTree = "<group>"; };
+		58C3472CC3A1E681CAD1E42D /* SignedInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignedInViewController.swift; sourceTree = "<group>"; };
 		58C34DF5037AEB06B3468F21 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5A71F858E4B7B221A4DEC58A /* Pods_swift_firebase_auth_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_firebase_auth_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D00D0E201F79944EB1833B /* Pods-swift-firebase-auth-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-firebase-auth-sample.release.xcconfig"; path = "Target Support Files/Pods-swift-firebase-auth-sample/Pods-swift-firebase-auth-sample.release.xcconfig"; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				58C3426C2A59C95DAFEB2214 /* LoginViewController.swift */,
 				58C34DF5037AEB06B3468F21 /* RegisterViewController.swift */,
+				58C3472CC3A1E681CAD1E42D /* SignedInViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				58C34AE3BDA012E16B937044 /* Util.swift in Sources */,
 				58C3436C3411C99F0ED44F8B /* LoginViewController.swift in Sources */,
 				58C347B38CC49D72CDFF5035 /* RegisterViewController.swift in Sources */,
+				58C34B88C2BF90A82C00F65A /* SignedInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
