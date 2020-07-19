@@ -5,6 +5,11 @@ class MainViewController: UIViewController {
   var handle: Optional<AuthStateDidChangeListenerHandle> = nil
   let userDefaults = UserDefaults.standard
 
+  func state(_ s: String) {
+    debugPrint(s)
+    self.stateLabel.text = s
+  }
+
   let stateLabel: UILabel = {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
@@ -114,7 +119,7 @@ class MainViewController: UIViewController {
     Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
       if let r: AuthDataResult = authResult {
         let user: User = r.user
-        self.stateLabel.text = "login success"
+        self.state("login success")
         self.userDefaults.set(user.uid, forKey: "firebase_uid")
         self.firebaseUidLabel.text = user.uid
       }
@@ -166,10 +171,10 @@ class MainViewController: UIViewController {
     if let user = Auth.auth().currentUser  {
       debugPrint(user)
       if let uid = self.userDefaults.string(forKey: "firebase_uid") {
-        self.stateLabel.text = "already login."
+        self.state("already login.")
         self.firebaseUidLabel.text = uid
       } else {
-        self.stateLabel.text = "firebase auth is found, but user defaults not found"
+        self.state("firebase auth is found, but user defaults not found")
         do {
           try Auth.auth().signOut()
         } catch let signOutError as NSError {
@@ -177,7 +182,7 @@ class MainViewController: UIViewController {
         }
       }
     } else {
-      self.stateLabel.text = "not login."
+      self.state("not login.")
     }
   }
 
