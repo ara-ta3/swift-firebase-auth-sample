@@ -2,7 +2,6 @@ import UIKit
 import FirebaseAuth
 
 class MainViewController: UIViewController {
-  var handle: Optional<AuthStateDidChangeListenerHandle> = nil
   let userDefaults = UserDefaults.standard
 
   func state(_ s: String) {
