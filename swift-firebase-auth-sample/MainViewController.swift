@@ -132,6 +132,7 @@ class MainViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.view.backgroundColor = .white
+    self.title = "登録"
 
     self.view.addSubview(self.stateLabel)
     self.view.addSubview(self.firebaseUidLabel)
@@ -144,7 +145,7 @@ class MainViewController: UIViewController {
     self.view.addSubview(self.loginPassword)
     self.view.addSubview(self.loginButton)
 
-    self.stateLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 24).isActive = true
+    self.stateLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 24).isActive = true
     self.stateLabel.leftAnchor.constraint(equalTo: self.view.leftAnchor,constant: 16).isActive = true
     self.firebaseUidLabel.topAnchor.constraint(equalTo: self.stateLabel.bottomAnchor, constant: 8).isActive = true
 
