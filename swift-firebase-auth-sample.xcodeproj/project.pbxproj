@@ -10,6 +10,7 @@
 		07CA8F9B37C7281B23FD6228 /* Pods_swift_firebase_auth_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A71F858E4B7B221A4DEC58A /* Pods_swift_firebase_auth_sample.framework */; };
 		58C340CC5C7C6B7D2CB659BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58C3404A4CB86B337DF1B9EC /* GoogleService-Info.plist */; };
 		58C344D3C0C28B9B64AE1438 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C34A5983096A1024E7C664 /* MainViewController.swift */; };
+		58C348704508CA5E9FD83036 /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C342E65F62EE06C208F9E0 /* MyTextField.swift */; };
 		AB2D812B24B019F900753B8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2D812A24B019F900753B8F /* AppDelegate.swift */; };
 		AB2D812D24B019F900753B8F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2D812C24B019F900753B8F /* SceneDelegate.swift */; };
 		AB2D812F24B019F900753B8F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2D812E24B019F900753B8F /* ContentView.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		58C3404A4CB86B337DF1B9EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		58C342E65F62EE06C208F9E0 /* MyTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
 		58C34A5983096A1024E7C664 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5A71F858E4B7B221A4DEC58A /* Pods_swift_firebase_auth_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_firebase_auth_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D00D0E201F79944EB1833B /* Pods-swift-firebase-auth-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-firebase-auth-sample.release.xcconfig"; path = "Target Support Files/Pods-swift-firebase-auth-sample/Pods-swift-firebase-auth-sample.release.xcconfig"; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58C34FA27A2FA94CCDE6D89B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				58C342E65F62EE06C208F9E0 /* MyTextField.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		9D4B0123605280785B0232B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +96,7 @@
 				AB2D813224B019FB00753B8F /* Preview Content */,
 				58C3404A4CB86B337DF1B9EC /* GoogleService-Info.plist */,
 				58C34A5983096A1024E7C664 /* MainViewController.swift */,
+				58C34FA27A2FA94CCDE6D89B /* Views */,
 			);
 			path = "swift-firebase-auth-sample";
 			sourceTree = "<group>";
@@ -227,6 +238,7 @@
 				AB2D812D24B019F900753B8F /* SceneDelegate.swift in Sources */,
 				AB2D812F24B019F900753B8F /* ContentView.swift in Sources */,
 				58C344D3C0C28B9B64AE1438 /* MainViewController.swift in Sources */,
+				58C348704508CA5E9FD83036 /* MyTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

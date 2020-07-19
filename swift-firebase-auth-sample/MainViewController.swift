@@ -34,19 +34,15 @@ class MainViewController: UIViewController {
     label.text = "新規登録"
     return label
   }()
-  let registerEmail: UITextField = {
-    let textField = UITextField()
-    textField.translatesAutoresizingMaskIntoConstraints = false
-    textField.textColor = .black
-    textField.placeholder = "Email"
+  lazy var registerEmail: UITextField = {
+    let textField = MyTextField()
+    textField.placeholder = "メールアドレス"
     return textField
   }()
 
-  let registerPassword: UITextField = {
-    let textField = UITextField()
-    textField.translatesAutoresizingMaskIntoConstraints = false
-    textField.textColor = .black
-    textField.placeholder = "Password"
+  lazy var registerPassword: UITextField = {
+    let textField = MyTextField()
+    textField.placeholder = "パスワード"
     textField.isSecureTextEntry = true
     return textField
   }()
@@ -154,9 +150,9 @@ class MainViewController: UIViewController {
     self.registerPassword.topAnchor.constraint(equalTo: self.registerEmail.bottomAnchor, constant: 16).isActive = true
     self.registerButton.topAnchor.constraint(equalTo: self.registerPassword.bottomAnchor, constant: 24).isActive = true
 
-    self.registerLabel.leftAnchor.constraint(equalTo: self.view.leftAnchor,constant: 22).isActive = true
-    self.registerEmail.leftAnchor.constraint(equalTo: self.view.leftAnchor,constant: 30).isActive = true
-    self.registerPassword.leftAnchor.constraint(equalTo: self.view.leftAnchor,constant: 30).isActive = true
+    self.registerLabel.leftAnchor.constraint(equalTo: self.view.leftAnchor,constant: 24).isActive = true
+    self.registerEmail.leftAnchor.constraint(equalTo: self.view.leftAnchor,constant: 16).isActive = true
+    self.registerPassword.leftAnchor.constraint(equalTo: self.view.leftAnchor,constant: 16).isActive = true
     self.registerButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
 
     self.loginLabel.topAnchor.constraint(equalTo: self.registerButton.bottomAnchor, constant: 50).isActive = true
