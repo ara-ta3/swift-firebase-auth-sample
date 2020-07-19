@@ -9,14 +9,13 @@
 /* Begin PBXBuildFile section */
 		07CA8F9B37C7281B23FD6228 /* Pods_swift_firebase_auth_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A71F858E4B7B221A4DEC58A /* Pods_swift_firebase_auth_sample.framework */; };
 		58C340CC5C7C6B7D2CB659BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58C3404A4CB86B337DF1B9EC /* GoogleService-Info.plist */; };
-		58C344D3C0C28B9B64AE1438 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C34A5983096A1024E7C664 /* RegisterViewController.swift */; };
-		58C34785890E760894C18846 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C3409D9FE101949AF90A93 /* LoginViewController.swift */; };
+		58C3436C3411C99F0ED44F8B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C3426C2A59C95DAFEB2214 /* LoginViewController.swift */; };
+		58C347B38CC49D72CDFF5035 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C34DF5037AEB06B3468F21 /* RegisterViewController.swift */; };
 		58C34831758E59B414855641 /* MyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C3458306B41C2CCD1B5727 /* MyButton.swift */; };
 		58C348704508CA5E9FD83036 /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C342E65F62EE06C208F9E0 /* MyTextField.swift */; };
 		58C34AE3BDA012E16B937044 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C3436943963E0B1727055A /* Util.swift */; };
 		AB2D812B24B019F900753B8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2D812A24B019F900753B8F /* AppDelegate.swift */; };
 		AB2D812D24B019F900753B8F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2D812C24B019F900753B8F /* SceneDelegate.swift */; };
-		AB2D812F24B019F900753B8F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2D812E24B019F900753B8F /* ContentView.swift */; };
 		AB2D813124B019FB00753B8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB2D813024B019FB00753B8F /* Assets.xcassets */; };
 		AB2D813424B019FB00753B8F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB2D813324B019FB00753B8F /* Preview Assets.xcassets */; };
 		AB2D813724B019FB00753B8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB2D813524B019FB00753B8F /* LaunchScreen.storyboard */; };
@@ -24,17 +23,16 @@
 
 /* Begin PBXFileReference section */
 		58C3404A4CB86B337DF1B9EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		58C3409D9FE101949AF90A93 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		58C3426C2A59C95DAFEB2214 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		58C342E65F62EE06C208F9E0 /* MyTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
 		58C3436943963E0B1727055A /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		58C3458306B41C2CCD1B5727 /* MyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyButton.swift; sourceTree = "<group>"; };
-		58C34A5983096A1024E7C664 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		58C34DF5037AEB06B3468F21 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5A71F858E4B7B221A4DEC58A /* Pods_swift_firebase_auth_sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_firebase_auth_sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D00D0E201F79944EB1833B /* Pods-swift-firebase-auth-sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-firebase-auth-sample.release.xcconfig"; path = "Target Support Files/Pods-swift-firebase-auth-sample/Pods-swift-firebase-auth-sample.release.xcconfig"; sourceTree = "<group>"; };
 		AB2D812724B019F900753B8F /* swift-firebase-auth-sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-firebase-auth-sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB2D812A24B019F900753B8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB2D812C24B019F900753B8F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AB2D812E24B019F900753B8F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AB2D813024B019FB00753B8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB2D813324B019FB00753B8F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AB2D813624B019FB00753B8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +53,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58C34B31B0923DE4B5AE5A9B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				58C3426C2A59C95DAFEB2214 /* LoginViewController.swift */,
+				58C34DF5037AEB06B3468F21 /* RegisterViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		58C34FA27A2FA94CCDE6D89B /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,16 +103,14 @@
 				AB31E68424C2B8B0004E06F7 /* swift-firebase-auth-sampleDebug.entitlements */,
 				AB2D812A24B019F900753B8F /* AppDelegate.swift */,
 				AB2D812C24B019F900753B8F /* SceneDelegate.swift */,
-				AB2D812E24B019F900753B8F /* ContentView.swift */,
 				AB2D813024B019FB00753B8F /* Assets.xcassets */,
 				AB2D813524B019FB00753B8F /* LaunchScreen.storyboard */,
 				AB2D813824B019FB00753B8F /* Info.plist */,
 				AB2D813224B019FB00753B8F /* Preview Content */,
 				58C3404A4CB86B337DF1B9EC /* GoogleService-Info.plist */,
-				58C34A5983096A1024E7C664 /* RegisterViewController.swift */,
 				58C34FA27A2FA94CCDE6D89B /* Views */,
-				58C3409D9FE101949AF90A93 /* LoginViewController.swift */,
 				58C3436943963E0B1727055A /* Util.swift */,
+				58C34B31B0923DE4B5AE5A9B /* ViewControllers */,
 			);
 			path = "swift-firebase-auth-sample";
 			sourceTree = "<group>";
@@ -245,12 +250,11 @@
 			files = (
 				AB2D812B24B019F900753B8F /* AppDelegate.swift in Sources */,
 				AB2D812D24B019F900753B8F /* SceneDelegate.swift in Sources */,
-				AB2D812F24B019F900753B8F /* ContentView.swift in Sources */,
-				58C344D3C0C28B9B64AE1438 /* RegisterViewController.swift in Sources */,
 				58C348704508CA5E9FD83036 /* MyTextField.swift in Sources */,
 				58C34831758E59B414855641 /* MyButton.swift in Sources */,
-				58C34785890E760894C18846 /* LoginViewController.swift in Sources */,
 				58C34AE3BDA012E16B937044 /* Util.swift in Sources */,
+				58C3436C3411C99F0ED44F8B /* LoginViewController.swift in Sources */,
+				58C347B38CC49D72CDFF5035 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
