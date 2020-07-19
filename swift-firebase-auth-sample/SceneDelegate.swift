@@ -1,5 +1,8 @@
 import UIKit
 import SwiftUI
+import FirebaseAuth
+
+var globalFirebaseUser: User? = nil
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
